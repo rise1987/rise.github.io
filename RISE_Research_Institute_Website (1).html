@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RISE | Research Institute of Statistics & Economics</title>
+<meta name="description" content="RISE — Research Institute of Statistics & Economics. Research, Analytics, Training and Projects. Moranhat, Assam, India.">
+<style>
+:root{
+  --ink:#0b1726;
+  --ink2:#14263b;
+  --muted:#627286;
+  --line:#dfe6ed;
+  --paper:#f7f9fb;
+  --white:#fff;
+  --accent:#0d8a87;
+  --accent2:#b7e2df;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.12);position:absolute;top:0;left:0;right:0;z-index:5;color:#fff}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.04em}
+.logo{width:42px;height:42px;border:1px solid rgba(255,255,255,.45);display:grid;place-items:center;font-size:14px;letter-spacing:.08em}
+.navlinks{display:flex;gap:28px;font-size:13px;font-weight:600}
+.navlinks a{opacity:.86}.navlinks a:hover{opacity:1;color:#bce8e5}
+.menu{display:none}
+.hero{min-height:760px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(5,18,31,.96) 0%,rgba(5,18,31,.84) 45%,rgba(5,18,31,.42) 100%),url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2200&q=85") center/cover}
+.hero .container{padding-top:80px}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800;color:#9edbd8;margin-bottom:18px}
+h1{font-size:clamp(52px,8vw,108px);line-height:.9;letter-spacing:-.06em;max-width:850px}
+.hero h2{font-size:clamp(21px,3vw,34px);font-weight:500;margin:24px 0 18px;max-width:780px}
+.hero p{max-width:650px;color:#d5dee7;font-size:17px}
+.actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{padding:14px 21px;border:1px solid rgba(255,255,255,.3);font-weight:700;font-size:13px}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--ink)}
+.statbar{background:#0f2133;color:#fff}
+.stats{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:25px 20px;border-right:1px solid rgba(255,255,255,.12)}
+.stat:last-child{border-right:0}.stat strong{display:block;font-size:24px}.stat span{font-size:12px;color:#aebdca}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:50px;margin-bottom:50px}
+.section-head h2{font-size:clamp(34px,4vw,54px);line-height:1.02;letter-spacing:-.04em;max-width:600px}
+.section-head p{max-width:460px;color:var(--muted);font-size:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.card{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:260px}
+.card .num{font-size:11px;color:var(--accent);font-weight:800;letter-spacing:.12em}
+.card h3{font-size:24px;margin:48px 0 12px}.card p{font-size:14px;color:var(--muted)}
+.card ul{list-style:none;margin-top:20px}.card li{font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line);color:#445568}
+.dark{background:var(--ink);color:#fff}.dark .section-head p{color:#aebdca}
+.expertise{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+.expertise-image{min-height:530px;background:url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1500&q=85") center/cover}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}.tag{border:1px solid #33485d;padding:9px 13px;font-size:12px;color:#d5dee7}
+.process{display:grid;grid-template-columns:repeat(5,1fr);margin-top:50px;border-top:1px solid #33485d}
+.step{padding:25px 18px 10px;border-right:1px solid #33485d}.step:first-child{border-left:1px solid #33485d}
+.step b{font-size:11px;color:#83d2ce}.step h3{margin:25px 0 8px;font-size:18px}.step p{font-size:12px;color:#aebdca}
+.training{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tcard{min-height:280px;position:relative;padding:30px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(0deg,rgba(4,17,29,.94),rgba(4,17,29,.15)),url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80") center/cover}
+.tcard:nth-child(2){background-image:linear-gradient(0deg,rgba(4,17,29,.94),rgba(4,17,29,.15)),url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80")}
+.tcard:nth-child(3){background-image:linear-gradient(0deg,rgba(4,17,29,.94),rgba(4,17,29,.15)),url("https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80")}
+.tcard small{color:#a8dedb;text-transform:uppercase;letter-spacing:.13em}.tcard h3{font-size:25px;margin-top:8px}
+.cta{background:#e9f4f3;padding:85px 0}.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:clamp(35px,5vw,62px);line-height:1;letter-spacing:-.05em;max-width:700px}.cta p{color:var(--muted);max-width:540px;margin-top:15px}
+footer{background:#071321;color:#fff;padding:60px 0 25px}.footergrid{display:grid;grid-template-columns:1.4fr .7fr .7fr;gap:60px}.footerbrand p{color:#9fafbd;max-width:440px;margin-top:18px;font-size:14px}.footercol h4{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#83d2ce;margin-bottom:16px}.footercol a{display:block;color:#c1ccd6;font-size:13px;margin:8px 0}.copyright{border-top:1px solid #243345;margin-top:45px;padding-top:18px;color:#748595;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:900px){
+ .navlinks{display:none}.menu{display:block}.hero{min-height:680px}.stats{grid-template-columns:repeat(2,1fr)}
+ .grid4{grid-template-columns:repeat(2,1fr)}.expertise{grid-template-columns:1fr}.training{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid #33485d}
+ .footergrid{grid-template-columns:1fr 1fr}.cta-inner{display:block}
+}
+@media(max-width:560px){
+ section{padding:75px 0}.stats{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:20px}.process{grid-template-columns:1fr}.footergrid{grid-template-columns:1fr}.copyright{display:block}.copyright span{display:block;margin-top:8px}
+}
+</style>
+</head>
+<body>
+<header class="nav container">
+  <a class="brand" href="#"><span class="logo">RISE</span><span>RISE</span></a>
+  <nav class="navlinks">
+    <a href="#about">About</a><a href="#verticals">Verticals</a><a href="#expertise">Expertise</a><a href="#training">Training</a><a href="#contact">Contact</a>
+  </nav>
+  <span class="menu">MENU</span>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+  <div class="eyebrow">Moranhat · Assam · India</div>
+  <h1>Research that<br>moves decisions.</h1>
+  <h2>Research Institute of Statistics & Economics</h2>
+  <p>RISE brings together rigorous research, advanced analytics, professional training and applied projects at the intersection of statistics, economics, econometrics and data.</p>
+  <div class="actions"><a class="btn primary" href="#verticals">Explore RISE</a><a class="btn ghost" href="#contact">Work With Us</a></div>
+</div>
+</section>
+
+<div class="statbar"><div class="container stats">
+ <div class="stat"><strong>RESEARCH</strong><span>Academic & applied inquiry</span></div>
+ <div class="stat"><strong>ANALYTICS</strong><span>Evidence & decision intelligence</span></div>
+ <div class="stat"><strong>TRAINING</strong><span>FDPs · MDPs · workshops</span></div>
+ <div class="stat"><strong>PROJECTS</strong><span>Research & analytics engagements</span></div>
+</div></div>
+
+<section id="about">
+<div class="container">
+ <div class="section-head"><h2>A research-led institution built for evidence.</h2><p>RISE is designed to connect methodological rigour with real-world questions—serving researchers, universities, organisations, institutions and professionals.</p></div>
+ <div class="expertise">
+  <div><p style="color:var(--muted);font-size:18px;max-width:650px">Our work sits at the intersection of <b style="color:var(--ink)">Statistics, Economics, Econometrics and Analytics</b>. We develop knowledge, translate data into insight, and build research capability.</p>
+   <div class="tags" style="margin-top:30px"><span class="tag" style="color:#173348;border-color:#dfe6ed">Methodological rigour</span><span class="tag" style="color:#173348;border-color:#dfe6ed">Applied research</span><span class="tag" style="color:#173348;border-color:#dfe6ed">Evidence-based</span><span class="tag" style="color:#173348;border-color:#dfe6ed">Data-driven</span></div>
+  </div>
+  <div class="expertise-image" aria-label="Research and analytics team"></div>
+ </div>
+</div>
+</section>
+
+<section id="verticals" class="dark">
+<div class="container">
+ <div class="section-head"><h2>Four verticals.<br>One research ecosystem.</h2><p>RISE is deliberately structured around four complementary capabilities, keeping the institute focused, scalable and easy to engage.</p></div>
+ <div class="grid4">
+  <article class="card"><span class="num">01</span><h3>Research</h3><p>Academic, applied and interdisciplinary research across quantitative and economic domains.</p><ul><li>Research design</li><li>Statistics & econometrics</li><li>Economic & policy research</li><li>Research publication</li></ul></article>
+  <article class="card"><span class="num">02</span><h3>Analytics</h3><p>Advanced analytical methods that turn structured and unstructured data into insight.</p><ul><li>Statistical modelling</li><li>Business intelligence</li><li>Predictive analytics</li><li>Data & AI applications</li></ul></article>
+  <article class="card"><span class="num">03</span><h3>Training</h3><p>Practical capacity building for faculty, scholars, professionals and organisations.</p><ul><li>FDPs & MDPs</li><li>Research methodology</li><li>Statistics & econometrics</li><li>Analytics & software</li></ul></article>
+  <article class="card"><span class="num">04</span><h3>Projects</h3><p>End-to-end research and analytics engagements designed around specific questions.</p><ul><li>Industry research</li><li>Academic projects</li><li>Impact & policy studies</li><li>Analytics assignments</li></ul></article>
+ </div>
+</div>
+</section>
+
+<section id="expertise">
+<div class="container">
+ <div class="section-head"><h2>Where quantitative rigour meets practical relevance.</h2><p>Our capabilities span the methods and applications needed for modern research and analytics.</p></div>
+ <div class="grid4">
+  <div class="card"><span class="num">STATISTICS</span><h3>Statistical Science</h3><p>Modelling, inference, survey methods, multivariate analysis and applied statistics.</p></div>
+  <div class="card"><span class="num">ECONOMICS</span><h3>Economic Research</h3><p>Applied, financial, development and policy-oriented economic research.</p></div>
+  <div class="card"><span class="num">ECONOMETRICS</span><h3>Econometric Methods</h3><p>Panel data, time series, causal inference, forecasting and financial econometrics.</p></div>
+  <div class="card"><span class="num">DATA</span><h3>Analytics & AI</h3><p>Business intelligence, predictive analytics, visualization and machine learning applications.</p></div>
+ </div>
+</div>
+</section>
+
+<section class="dark">
+<div class="container">
+ <div class="section-head"><h2>From question to evidence to action.</h2><p>A structured research-to-impact approach keeps every engagement focused on clarity, methodological quality and usable outcomes.</p></div>
+ <div class="process">
+  <div class="step"><b>01</b><h3>Define</h3><p>Frame the question, context and decision.</p></div>
+  <div class="step"><b>02</b><h3>Analyse</h3><p>Choose appropriate data and methods.</p></div>
+  <div class="step"><b>03</b><h3>Validate</h3><p>Test assumptions and robustness.</p></div>
+  <div class="step"><b>04</b><h3>Translate</h3><p>Turn evidence into clear insight.</p></div>
+  <div class="step"><b>05</b><h3>Deliver</h3><p>Produce research, analytics or training outputs.</p></div>
+ </div>
+</div>
+</section>
+
+<section id="training" style="background:var(--paper)">
+<div class="container">
+ <div class="section-head"><h2>Build capability, not just knowledge.</h2><p>RISE training is designed around application—combining concepts, methods, software and research practice.</p></div>
+ <div class="training">
+  <article class="tcard"><small>Faculty & Research</small><h3>Faculty Development Programmes</h3></article>
+  <article class="tcard"><small>Leadership & Practice</small><h3>Management Development Programmes</h3></article>
+  <article class="tcard"><small>Advanced Methods</small><h3>Statistics, Econometrics & Analytics</h3></article>
+ </div>
+</div>
+</section>
+
+<section id="contact" class="cta">
+<div class="container cta-inner">
+ <div><div class="eyebrow" style="color:var(--accent)">Start a conversation</div><h2>Let’s build evidence that matters.</h2><p>Discuss a research project, analytics engagement, training programme or institutional collaboration with RISE.</p></div>
+ <a class="btn primary" href="mailto:info@rise-research.in">Contact RISE →</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+ <div class="footergrid">
+  <div class="footerbrand"><div class="brand"><span class="logo">RISE</span><span>Research Institute of Statistics & Economics</span></div><p>Research-led. Analytics-driven. Focused on building evidence, insight and capability.</p></div>
+  <div class="footercol"><h4>Explore</h4><a href="#about">About</a><a href="#verticals">Verticals</a><a href="#expertise">Expertise</a><a href="#training">Training</a></div>
+  <div class="footercol"><h4>Connect</h4><a href="mailto:info@rise-research.in">info@rise-research.in</a><a href="#contact">Project Enquiries</a><a href="#contact">Training Enquiries</a></div>
+ </div>
+ <div class="copyright"><span>© 2026 RISE — Research Institute of Statistics & Economics</span><span>Moranhat, Assam, India</span></div>
+</div>
+</footer>
+</body>
+</html>
